@@ -37,5 +37,7 @@ graph = [input() for _ in range(N)]
 visited = [[0]*M for _ in range(N)] # Enqueue 체크용
 
 bfs(0,0)
-# print(visited)
+for i in range(N):
+    print(*visited[i])
+
 print(visited[N-1][M-1])
