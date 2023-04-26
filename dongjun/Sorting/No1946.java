@@ -12,20 +12,20 @@ public class No1946 {
         StringTokenizer st;
 
         StringBuilder sb = new StringBuilder();
-        int T = Integer.parseInt(br.readLine());
+        int T = Integer.parseInt(br.readLine()); // 입력
         for (int i=0; i<T; i++) {
-            int n = Integer.parseInt(br.readLine());
+            int n = Integer.parseInt(br.readLine()); // 입력
 
-            ArrayList<Overall> overalls = new ArrayList<>();
+            ArrayList<Overall> overalls = new ArrayList<>(); // 종합순위 리스트
             for (int j=0; j<n; j++) {
                 st = new StringTokenizer(br.readLine(), " ");
 
-                int documentRank = Integer.parseInt(st.nextToken());
-                int interviewRank = Integer.parseInt(st.nextToken());
+                int documentRank = Integer.parseInt(st.nextToken()); // 서류순위
+                int interviewRank = Integer.parseInt(st.nextToken()); // 면접순위
 
-                overalls.add(new Overall(documentRank, interviewRank));
+                overalls.add(new Overall(documentRank, interviewRank)); // 종합순위 리스트에 추가
             }
-            Collections.sort(overalls); // documentRank 기준정렬
+            Collections.sort(overalls); // 서류순위를 기준으로 정렬
 
             int result = getPassMaxCount(overalls);
             sb.append(result).append("\n");

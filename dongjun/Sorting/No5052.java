@@ -12,8 +12,8 @@ public class No5052 {
         int T = Integer.parseInt(br.readLine());
         for (int i=0; i<T; i++) {
             // 전화번호의 수
-            int n = Integer.parseInt(br.readLine());
-            Trie trie = new Trie();
+            int n = Integer.parseInt(br.readLine()); // 입력
+            Trie trie = new Trie(); // 트라이 객체 생성 - 첫 노드는 비워둠
             ArrayList<String> phoneNumberList = new ArrayList<>();
             for (int j=0; j<n; j++) {
                 String phoneNumber = br.readLine();
@@ -34,6 +34,7 @@ public class No5052 {
         return "YES";
     }
 
+    // 트라이 자료구조 객체
     public static class Trie {
         private Node root;
 
@@ -45,7 +46,7 @@ public class No5052 {
         void add(String phoneNumber) {
             Node node = this.root;
             for(int i=0; i<phoneNumber.length(); i++) {
-                node = node.children.computeIfAbsent(phoneNumber.charAt(i)-'0', n -> new Node());
+                node = node.children.computeIfAbsent(phoneNumber.charAt(i)-'0', n -> new Node()); // 전화번호 각 숫자가 자식으로 있으면 pass, 없으면 추가
             }
             node.last = true;
         }
@@ -64,6 +65,7 @@ public class No5052 {
         }
     }
 
+    // 노드
     public static class Node {
         private Map<Integer, Node> children = new HashMap<>();
         private boolean last;

@@ -15,13 +15,13 @@ public class No2470 {
 
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         for (int i=0; i<n; i++) {
-            int value = Integer.parseInt(st.nextToken());
-            arr[i] = value;
+            int value = Integer.parseInt(st.nextToken()); // 입력
+            arr[i] = value; // arr 배열에 저장
         }
         Arrays.sort(arr); // 정렬
 
         int[] answer = new int[2]; // 정답
-        int mem = Integer.MAX_VALUE; // 절대값이 0에 가까운 값을 임시 저장
+        int mem = Integer.MAX_VALUE; // 절대값이 0에 가까운 값을 임시 저장하기 위한 변수
         int min = 0; // 최소 index
         int max = n-1; // 최대 index
         while (max > min) {
@@ -41,10 +41,12 @@ public class No2470 {
                 answer[1] = arr[max];
             }
 
+            // sum 이 0보다 크면 max-1, 아니면 min+1
             if (sum > 0) max--;
             else min++;
         }
 
+        // 정답 출력
         System.out.println(answer[0] + " " + answer[1]);
     }
 }
