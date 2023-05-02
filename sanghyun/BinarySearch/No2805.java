@@ -1,3 +1,6 @@
+/*나무자르기
+ * https://www.acmicpc.net/problem/2805
+ */
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
