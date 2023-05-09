@@ -34,7 +34,7 @@ if n >= 2:
     dp[2] = arr[1] + arr[2]
 for j in range(3,n+1):
     dp[j] = max(dp[j-2] + arr[j], dp[j-3]+arr[j-1]+arr[j])
-    dp[n] = max(dp[n-1], dp[n])
+    dp[j] = max(dp[j-1], dp[j])
 
 # print(dp)
 print(max(dp))
